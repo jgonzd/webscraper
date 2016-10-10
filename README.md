@@ -1,4 +1,4 @@
 # webscraper
-Web scraper I made a long time ago written in python.
+Webscraper I made a long time ago written in python.
 
 Still need to upload the rest of the files.
