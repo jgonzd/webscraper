@@ -27,8 +27,6 @@ TF_file = codecs.open('twitter_filter.txt', 'r', 'UTF-8')
 twitter_filter = unicode(TF_file.read().rstrip())
 TF_file.close()
 
-
-
 update_total = 0
 errors = 0
 email = ''
@@ -38,7 +36,6 @@ for link in links:
                 link = link.strip()
                 filename =  re.sub("(http)(s)?(://)(www\.)?", '', link)
  filename = 'out/' + re.sub("/.*", '', filename) + '.html'
-
 
                 try:
 
@@ -75,11 +72,6 @@ for link in links:
                 e.extend(html.find_all( 'dl'))
                 e.extend(html.find_all( 'text'))
 
-
-
-                
-
-
                 text = []
                 out = []
                 if re.search(u'twitter|baidu|ishuhui',  unicode(link), re.UNICODE | re.I) == None:
@@ -88,7 +80,6 @@ for link in links:
                                 if len(input_) < 2000 and \
                                 re.search(expression, input_, re.UNICODE | re.I) != None:
                                                 text.append(input_)
-
 
                         j = 0
                         if len(text) > 0:
@@ -130,9 +121,6 @@ for link in links:
                         for ishuhui in html.find_all('div', {'class':'thumbnail'}):
                                 if not (unicode(ishuhui) in site):
                                         text.append(unicode(ishuhui))
-
-
-
 
                 for mu in html.find_all('dl', {'class':'NA_articleLink'}):
                         mu_ = re.sub(unicode(filter_), u'', unicode(mu), re.UNICODE | re.DOTALL)
