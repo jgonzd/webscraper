@@ -57,8 +57,6 @@ for link in links:
 
                 e = []
                 e.extend(html.find_all( 'div'))
-
-
                 e.extend(html.find_all( 'a'))
                 e.extend(html.find_all( 'img'))
                 e.extend(html.find_all( 'ul'))
